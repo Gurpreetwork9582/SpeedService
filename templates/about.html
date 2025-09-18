@@ -1,5 +1,33 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1>ABOUT</h1>
+<div class="info-section"
+     style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; text-align:center;">
+    <h1 style="margin-bottom:10px; align-items:center;">Get in touch with us</h1>
+
+    <form action="/about" method="post"
+          style="display:flex; flex-direction:column; gap:15px; width:100%; max-width:400px;">
+
+        <label for="Name">Name</label>
+        <input type="text" id="info_name" name="name" placeholder="Name"
+               style="padding:10px; border:1px solid #ccc; border-radius:5px;">
+
+        <label for="Company Email">Company Email</label>
+        <input type="email" id="company_email" name="email" placeholder="Email"
+               style="padding:10px; border:1px solid #ccc; border-radius:5px;">
+
+        <label for="Location">Location</label>
+        <select name="location" id="location" style="padding:10px; border:1px solid #ccc; gap:15px; border-radius:5px;">
+            <option value="Mississauga">Mississauga</option>
+            <option value="Toronto">Toronto</option>
+            <option value="North York">North York</option>
+            <option value="Brampton">Brampton</option>
+        </select>
+
+        <button type="submit"
+                style="padding:10px; border:none; gap:15px; border-radius:5px; background:#007BFF; color:white; cursor:pointer;">
+            Submit
+        </button>
+    </form>
+</div>
 {% endblock %}
